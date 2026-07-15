@@ -18,5 +18,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the application
 COPY --chown=user server/ .
 
-# Hugging Face Spaces expects the app to run on port 7860
+# Hugging Face and Back4App Containers expect the app to expose the port
+EXPOSE 7860
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "7860"]
