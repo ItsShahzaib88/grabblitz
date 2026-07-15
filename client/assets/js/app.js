@@ -148,75 +148,82 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button class="btn-download" id="dl-${f.format_id}"><i class="fa-solid fa-download"></i> Download</button>
             `;
 
-            card.querySelector('.btn-download').addEventListener('click', async () => {
-                const btn = card.querySelector('.btn-download');
-                btn.style.display = 'none';
+            card.querySelector('.btn-download').addEventListener('click', () => {
+                import('./ads.js').then(({ showDownloadAdWithDelay }) => {
+                    showDownloadAdWithDelay(async () => {
+                        const btn = card.querySelector('.btn-download');
+                        btn.style.display = 'none';
 
-                // Create PlayStore style circular progress container
-                const progressContainer = document.createElement('div');
-                progressContainer.className = 'progress-container';
-                progressContainer.style.cssText = 'display: flex; align-items: center; gap: 12px; margin-top: 0.5rem; justify-content: center; width: 100%; background: var(--bg-secondary); padding: 8px; border-radius: 8px; border: 1px solid var(--border);';
-                
-                progressContainer.innerHTML = `
-                    <div style="position: relative; width: 44px; height: 44px; flex-shrink: 0;">
-                        <svg viewBox="0 0 36 36" style="width: 100%; height: 100%; transform: rotate(-90deg);">
-                            <circle cx="18" cy="18" r="16" fill="none" stroke="var(--border)" stroke-width="3"></circle>
-                            <circle class="ring-fill" cx="18" cy="18" r="16" fill="none" stroke="#3b82f6" stroke-width="3" stroke-dasharray="100.53" stroke-dashoffset="100.53" stroke-linecap="round" style="transition: stroke-dashoffset 0.2s linear;"></circle>
-                        </svg>
-                        <div class="progress-percent" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 0.65rem; font-weight: 700; color: var(--text);">0%</div>
-                    </div>
-                    <div style="display: flex; flex-direction: column; text-align: left; overflow: hidden;">
-                        <span class="progress-speed" style="font-size: 0.85rem; font-weight: 600; color: var(--text); white-space: nowrap;">0 KB/s</span>
-                        <span class="progress-size" style="font-size: 0.7rem; color: var(--text-muted); white-space: nowrap;">0 MB / 0 MB</span>
-                    </div>
-                `;
-                card.appendChild(progressContainer);
+                        // Create PlayStore style circular progress container
+                        const progressContainer = document.createElement('div');
+                        progressContainer.className = 'progress-container';
+                        progressContainer.style.cssText = 'display: flex; align-items: center; gap: 12px; margin-top: 0.5rem; justify-content: center; width: 100%; background: var(--bg-secondary); padding: 8px; border-radius: 8px; border: 1px solid var(--border);';
+                        
+                        progressContainer.innerHTML = `
+                            <div style="position: relative; width: 44px; height: 44px; flex-shrink: 0;">
+                                <svg viewBox="0 0 36 36" style="width: 100%; height: 100%; transform: rotate(-90deg);">
+                                    <circle cx="18" cy="18" r="16" fill="none" stroke="var(--border)" stroke-width="3"></circle>
+                                    <circle class="ring-fill" cx="18" cy="18" r="16" fill="none" stroke="#3b82f6" stroke-width="3" stroke-dasharray="100.53" stroke-dashoffset="100.53" stroke-linecap="round" style="transition: stroke-dashoffset 0.2s linear;"></circle>
+                                </svg>
+                                <div class="progress-percent" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 0.65rem; font-weight: 700; color: var(--text);">0%</div>
+                            </div>
+                            <div style="display: flex; flex-direction: column; text-align: left; overflow: hidden;">
+                                <span class="progress-speed" style="font-size: 0.85rem; font-weight: 600; color: var(--text); white-space: nowrap;">0 KB/s</span>
+                                <span class="progress-size" style="font-size: 0.7rem; color: var(--text-muted); white-space: nowrap;">0 MB / 0 MB</span>
+                            </div>
+                        `;
+                        card.appendChild(progressContainer);
 
-                const ringFill = progressContainer.querySelector('.ring-fill');
-                const percentText = progressContainer.querySelector('.progress-percent');
-                const sizeText = progressContainer.querySelector('.progress-size');
-                const speedText = progressContainer.querySelector('.progress-speed');
+                        const ringFill = progressContainer.querySelector('.ring-fill');
+                        const percentText = progressContainer.querySelector('.progress-percent');
+                        const sizeText = progressContainer.querySelector('.progress-size');
+                        const speedText = progressContainer.querySelector('.progress-speed');
 
-                try {
-                    await downloadFile(
-                        currentPageUrl,
-                        f.format_id,
-                        title,
-                        f.ext,
-                        f.filesize || f.approximate_filesize || 0,
-                        (prog) => {
-                            let percent = 0;
-                            if (prog.total) {
-                                percent = Math.min(100, Math.round((prog.loaded / prog.total) * 100));
-                            }
-                            
-                            // Circumference is 100.53
-                            const offset = 100.53 - (100.53 * percent / 100);
-                            ringFill.style.strokeDashoffset = offset;
-                            
-                            percentText.textContent = `${percent}%`;
-                            
-                            const loadedMB = (prog.loaded / (1024 * 1024)).toFixed(1);
-                            const totalMB = prog.total ? (prog.total / (1024 * 1024)).toFixed(1) : '?';
-                            sizeText.textContent = `${loadedMB} MB / ${totalMB} MB`;
+                        try {
+                            await downloadFile(
+                                currentPageUrl,
+                                f.format_id,
+                                title,
+                                f.ext,
+                                f.filesize || f.approximate_filesize || 0,
+                                (prog) => {
+                                    let percent = 0;
+                                    if (prog.total) {
+                                        percent = Math.min(100, Math.round((prog.loaded / prog.total) * 100));
+                                    }
+                                    
+                                    // Circumference is 100.53
+                                    const offset = 100.53 - (100.53 * percent / 100);
+                                    ringFill.style.strokeDashoffset = offset;
+                                    
+                                    percentText.textContent = `${percent}%`;
+                                    
+                                    const loadedMB = (prog.loaded / (1024 * 1024)).toFixed(1);
+                                    const totalMB = prog.total ? (prog.total / (1024 * 1024)).toFixed(1) : '?';
+                                    sizeText.textContent = `${loadedMB} MB / ${totalMB} MB`;
 
-                            const speedMB = prog.speed / (1024 * 1024);
-                            if (speedMB >= 1) {
-                                speedText.textContent = `${speedMB.toFixed(1)} MB/s`;
-                            } else {
-                                speedText.textContent = `${(prog.speed / 1024).toFixed(0)} KB/s`;
-                            }
-                        },
-                        f.has_audio
-                    );
-                    showToast('Download complete! File saved.', 'success');
-                } catch (err) {
-                    showToast(err.message || 'Download failed', 'error');
-                } finally {
-                    card.removeChild(progressContainer);
-                    btn.style.display = 'block';
-                    btn.innerHTML = '<i class="fa-solid fa-download"></i> Download';
-                }
+                                    const speedMB = prog.speed / (1024 * 1024);
+                                    if (speedMB >= 1) {
+                                        speedText.textContent = `${speedMB.toFixed(1)} MB/s`;
+                                    } else {
+                                        speedText.textContent = `${(prog.speed / 1024).toFixed(0)} KB/s`;
+                                    }
+                                },
+                                f.has_audio
+                            );
+                            showToast('Download complete! File saved.', 'success');
+                        } catch (err) {
+                            showToast(err.message || 'Download failed', 'error');
+                        } finally {
+                            card.removeChild(progressContainer);
+                            btn.style.display = 'block';
+                            btn.innerHTML = '<i class="fa-solid fa-download"></i> Download';
+                        }
+                    });
+                }).catch(() => {
+                    // Fallback if ads.js fails to load
+                    console.error('Failed to load ads.js');
+                });
             });
 
             container.appendChild(card);
