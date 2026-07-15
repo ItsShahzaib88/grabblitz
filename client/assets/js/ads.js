@@ -29,7 +29,7 @@ function createAdModal() {
                 </p>
                 
                 <div class="ad-container" id="adContainerBox" style="min-height: 250px; min-width: 300px; display: flex; justify-content: center; align-items: center; background: var(--bg-secondary); border-radius: 8px; overflow: hidden; margin-bottom: 1rem;">
-                    <!-- Ad will be loaded here via iframe to ensure script execution -->
+                    <iframe src="ads/banner-300x250.html" width="300" height="250" frameborder="0" scrolling="no" style="border:none;overflow:hidden;"></iframe>
                 </div>
                 
                 <div style="font-size: 0.75rem; color: var(--text-muted);">Advertisement</div>
@@ -59,37 +59,6 @@ function createAdModal() {
         </style>
     `;
     document.body.appendChild(modal);
-
-    // Inject the ad iframe safely
-    const adIframe = document.createElement('iframe');
-    adIframe.width = "300";
-    adIframe.height = "250";
-    adIframe.frameBorder = "0";
-    adIframe.scrolling = "no";
-    adIframe.style.border = "none";
-    adIframe.style.overflow = "hidden";
-    
-    const adHtml = \`
-        <html>
-        <body style="margin:0;padding:0;background:transparent;display:flex;justify-content:center;align-items:center;">
-            <script type="text/javascript">
-                atOptions = {
-                    'key' : 'a87103d881115808b5622630efca21cf',
-                    'format' : 'iframe',
-                    'height' : 250,
-                    'width' : 300,
-                    'params' : {}
-                };
-            </script>
-            <script type="text/javascript" src="https://fixesconsessionconsession.com/a87103d881115808b5622630efca21cf/invoke.js"></script>
-        </body>
-        </html>
-    \`;
-    
-    document.getElementById('adContainerBox').appendChild(adIframe);
-    adIframe.contentWindow.document.open();
-    adIframe.contentWindow.document.write(adHtml);
-    adIframe.contentWindow.document.close();
 }
 
 export function showDownloadAdWithDelay(callback) {
@@ -122,67 +91,17 @@ function injectBanners() {
         const topBannerContainer = document.createElement('div');
         topBannerContainer.style.cssText = "display: flex; justify-content: center; margin: 2rem 0; overflow: hidden; width: 100%;";
         
-        const iframe728 = document.createElement('iframe');
-        iframe728.width = "728";
-        iframe728.height = "90";
-        iframe728.frameBorder = "0";
-        iframe728.scrolling = "no";
-        iframe728.style.maxWidth = "100%";
-        
-        const adHtml = \`
-            <html>
-            <body style="margin:0;padding:0;display:flex;justify-content:center;">
-                <script type="text/javascript">
-                    atOptions = {
-                        'key' : 'cd1b5a78dc8b7d03a9e6dda3846654cd',
-                        'format' : 'iframe',
-                        'height' : 90,
-                        'width' : 728,
-                        'params' : {}
-                    };
-                </script>
-                <script type="text/javascript" src="https://fixesconsessionconsession.com/cd1b5a78dc8b7d03a9e6dda3846654cd/invoke.js"></script>
-            </body>
-            </html>
-        \`;
+        topBannerContainer.innerHTML = '<iframe src="ads/banner-728x90.html" width="728" height="90" frameborder="0" scrolling="no" style="max-width:100%; border:none;"></iframe>';
         mainEl.insertBefore(topBannerContainer, mainEl.firstChild);
-        topBannerContainer.appendChild(iframe728);
-        iframe728.contentWindow.document.open();
-        iframe728.contentWindow.document.write(adHtml);
-        iframe728.contentWindow.document.close();
     }
 
     if (window.innerWidth <= 768) {
         const mobileBanner = document.createElement('div');
         mobileBanner.style.cssText = "position: fixed; bottom: 0; left: 0; width: 100%; height: 50px; display: flex; justify-content: center; background: var(--bg-primary); z-index: 999; border-top: 1px solid var(--border-color); box-shadow: 0 -2px 10px rgba(0,0,0,0.5);";
         
-        const iframe320 = document.createElement('iframe');
-        iframe320.width = "320";
-        iframe320.height = "50";
-        iframe320.frameBorder = "0";
-        iframe320.scrolling = "no";
+        mobileBanner.innerHTML = '<iframe src="ads/banner-320x50.html" width="320" height="50" frameborder="0" scrolling="no" style="border:none;"></iframe>';
         
-        const adMobileHtml = \`
-            <html>
-            <body style="margin:0;padding:0;display:flex;justify-content:center;">
-                <script type="text/javascript">
-                    atOptions = {
-                        'key' : '2f0b914176605c9cb0af1c83b55cec20',
-                        'format' : 'iframe',
-                        'height' : 50,
-                        'width' : 320,
-                        'params' : {}
-                    };
-                </script>
-                <script type="text/javascript" src="https://fixesconsessionconsession.com/2f0b914176605c9cb0af1c83b55cec20/invoke.js"></script>
-            </body>
-            </html>
-        \`;
         document.body.appendChild(mobileBanner);
-        mobileBanner.appendChild(iframe320);
-        iframe320.contentWindow.document.open();
-        iframe320.contentWindow.document.write(adMobileHtml);
-        iframe320.contentWindow.document.close();
         
         // Add padding to body to prevent content from hiding behind sticky footer
         document.body.style.paddingBottom = "55px";
