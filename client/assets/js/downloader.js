@@ -1,8 +1,8 @@
 // downloader.js - API calls
 
 const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-// Change this to your Render.com backend URL after deployment (e.g., 'https://your-api.onrender.com/api')
-const API_BASE = isLocalhost ? 'http://localhost:8000/api' : 'https://YOUR_BACKEND_URL.onrender.com/api';
+// Connected to the live Back4App API!
+const API_BASE = isLocalhost ? 'http://localhost:8000/api' : 'https://grabblitzapi-n4yii4ja.b4a.run/api';
 
 export async function fetchMediaInfo(url) {
     try {
