@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f172a">
+    <title>GrabBlitz - Universal Video &amp; Audio Downloader</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="apple-touch-icon" href="assets/images/logo.png">
+
+    <meta name="description" content="GrabBlitz - Grab videos and audio at blitz speed from 30+ platforms including YouTube, TikTok, Instagram & Twitter. 100% free, no sign-up.">
+    
+    <!-- SEO & Social Meta Tags -->
+    <meta property="og:title" content="GrabBlitz - Universal Media Downloader">
+    <meta property="og:description" content="Grab videos and audio from 30+ platforms at blitz speed. 100% free.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://GrabBlitz.com">
+
+    <!-- Preload & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "GrabBlitz",
+      "url": "https://GrabBlitz.com",
+      "description": "GrabBlitz is the fastest universal media downloader supporting YouTube, TikTok, Instagram, Twitter and 30+ platforms.",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "All"
+    }
+    </script>
+</head>
+<body>
+    <div class="bg-aurora">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="container">
+        <!-- ===== NAVBAR ===== -->
+        <header class="navbar">
+            <div class="navbar-left">
+                <a href="index.html" class="logo">
+                    <img src="assets/images/logo.png" alt="GrabBlitz Logo" style="width:36px;height:36px;border-radius:8px;object-fit:cover;">
+                    <span>GrabBlitz</span>
+                </a>
+                <nav class="nav-links" aria-label="Main Navigation">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="tutorials.html" class="nav-link">Tutorials</a>
+                    <a href="blogs.html" class="nav-link">Blog</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+            </div>
+            <div class="navbar-right">
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark/Light Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile Nav -->
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="tutorials.html" class="nav-link">Tutorials</a>
+            <a href="blogs.html" class="nav-link">Blog</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <main>
+            <!-- ===== HERO ===== -->
+            <section class="hero">
+                <div style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.25);border-radius:var(--radius-full);padding:0.4rem 1rem;font-size:0.82rem;color:var(--accent-primary);font-weight:600;margin-bottom:1.5rem;">
+                    <i class="fa-solid fa-star" style="font-size:0.75rem;"></i>
+                    ⚡ Grab. Download. Blitz — 100% Free
+                </div>
+                <h1 class="hero-title">Grab Any Media <br><span style="color: var(--accent-primary);">At Blitz Speed ⚡</span></h1>
+                <p class="hero-subtitle">GrabBlitz downloads videos, audio, and images from YouTube, TikTok, Instagram, Twitter &amp; 30+ platforms instantly. Zero ads. Zero sign-up. Zero limits.</p>
+                
+                <div class="search-container">
+                    <form id="downloadForm" class="input-group">
+                        <i class="fa-solid fa-link" style="color: var(--text-muted); padding: 1rem 0 1rem 1.5rem; align-self: center;"></i>
+                        <input type="url" id="urlInput" class="url-input" placeholder="Paste video URL here..." required autocomplete="off">
+                        
+                        <div class="input-actions">
+                            <button type="button" id="pasteBtn" class="btn-icon" title="Paste from clipboard">
+                                <i class="fa-solid fa-paste"></i>
+                            </button>
+                        </div>
+                        
+                        <button type="submit" id="fetchBtn" class="btn-primary">
+                            <span class="btn-text">Download</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </form>
+                    
+                    <div id="platformBadgeContainer" class="platform-badge-container">
+                        <!-- Detected platform badge injected here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== STATS STRIP ===== -->
+            <div class="stats-strip">
+                <div class="stat-item">
+                    <span class="stat-value">30+</span>
+                    <span class="stat-label">Platforms</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">4K</span>
+                    <span class="stat-label">Max Quality</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">100%</span>
+                    <span class="stat-label">Free Forever</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">2M+</span>
+                    <span class="stat-label">Downloads</span>
+                </div>
+            </div>
+
+            <!-- ===== PLATFORMS ===== -->
+            <section class="platforms-section" style="margin-top:2.5rem;">
+                <h3>Supported Platforms</h3>
+                <div class="platform-chips">
+                    <div class="platform-chip"><i class="fa-brands fa-youtube" style="color:#ff0000"></i> YouTube</div>
+                    <div class="platform-chip"><i class="fa-brands fa-tiktok" style="color:#010101"></i> TikTok</div>
+                    <div class="platform-chip"><i class="fa-brands fa-instagram" style="color:#e1306c"></i> Instagram</div>
+                    <div class="platform-chip"><i class="fa-brands fa-x-twitter" style="color:#1da1f2"></i> Twitter/X</div>
+                    <div class="platform-chip"><i class="fa-brands fa-facebook" style="color:#1877f2"></i> Facebook</div>
+                    <div class="platform-chip"><i class="fa-brands fa-vimeo" style="color:#1ab7ea"></i> Vimeo</div>
+                    <div class="platform-chip"><i class="fa-brands fa-soundcloud" style="color:#ff5500"></i> SoundCloud</div>
+                    <div class="platform-chip"><i class="fa-brands fa-dailymotion" style="color:#0066DC"></i> Dailymotion</div>
+                    <div class="platform-chip"><i class="fa-brands fa-twitch" style="color:#9146ff"></i> Twitch</div>
+                    <div class="platform-chip"><i class="fa-brands fa-reddit" style="color:#ff4500"></i> Reddit</div>
+                    <div class="platform-chip"><i class="fa-brands fa-pinterest" style="color:#e60023"></i> Pinterest</div>
+                    <div class="platform-chip"><i class="fa-solid fa-plus"></i> 20+ More</div>
+                </div>
+            </section>
+
+            <!-- ===== LOADING STATE ===== -->
+            <section id="loadingState" class="skeleton-container hidden">
+                <div class="skeleton skeleton-img"></div>
+                <div class="skeleton-content">
+                    <div class="skeleton skeleton-title"></div>
+                    <div class="skeleton skeleton-text"></div>
+                    <div class="skeleton skeleton-text"></div>
+                    <div class="skeleton skeleton-text short"></div>
+                </div>
+            </section>
+
+            <!-- ===== RESULTS ===== -->
+            <section id="resultState" class="result-card hidden">
+                <div class="media-preview">
+                    <img id="mediaThumbnail" class="media-thumbnail" src="" alt="Video Thumbnail">
+                    <div id="mediaDuration" class="media-duration">0:00</div>
+                </div>
+                <div class="media-details">
+                    <h2 id="mediaTitle" class="media-title">Video Title</h2>
+                    <div class="media-meta">
+                        <span id="mediaUploader"><i class="fa-solid fa-user"></i> Uploader</span>
+                        <span id="mediaPlatform"><i class="fa-solid fa-globe"></i> Platform</span>
+                    </div>
+
+                    <div class="tabs">
+                        <button class="tab-btn active" data-target="videoFormats">Video</button>
+                        <button class="tab-btn" data-target="audioFormats">Audio</button>
+                    </div>
+
+                    <div id="videoFormats" class="format-grid">
+                        <!-- Video format cards injected here -->
+                    </div>
+
+                    <div id="audioFormats" class="format-grid hidden">
+                        <!-- Audio format cards injected here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== HOW IT WORKS ===== -->
+            <section class="how-it-works-section" style="padding: 4rem 0; margin-top: 3rem; text-align: center; border-top: 1px solid var(--border-color);">
+                <div class="section-header" style="justify-content:center;margin-bottom:2.5rem;">
+                    <div>
+                        <h2 style="font-size: 1.9rem;">How to Download Media</h2>
+                        <p style="color:var(--text-secondary);margin-top:0.4rem;">Three simple steps to get your content</p>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div style="background: var(--bg-secondary); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+                        <i class="fa-solid fa-copy" style="font-size: 2.5rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+                        <h3 style="margin-bottom: 0.5rem;">1. Copy the Link</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Find the video or audio you want on YouTube, TikTok, or Instagram and copy its link.</p>
+                    </div>
+                    <div style="background: var(--bg-secondary); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+                        <i class="fa-solid fa-paste" style="font-size: 2.5rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+                        <h3 style="margin-bottom: 0.5rem;">2. Paste in GrabBlitz</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Paste the link into the search box above and click the Download button.</p>
+                    </div>
+                    <div style="background: var(--bg-secondary); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+                        <i class="fa-solid fa-download" style="font-size: 2.5rem; color: var(--accent-primary); margin-bottom: 1rem;"></i>
+                        <h3 style="margin-bottom: 0.5rem;">3. Download File</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Choose your preferred quality and format (Video/Audio) and click download.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== TUTORIALS PREVIEW ===== -->
+            <section class="tutorial-section">
+                <div class="section-header">
+                    <div>
+                        <h2>Quick Tutorials</h2>
+                        <p>Step-by-step guides for every platform</p>
+                    </div>
+                    <a href="tutorials.html" class="view-all-btn">View All <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="tutorial-grid">
+                    <a href="tutorials.html#yt" class="tutorial-card">
+                        <div class="tutorial-num">01</div>
+                        <h3>Download YouTube Videos</h3>
+                        <p>Learn how to download YouTube videos in 4K, 1080p, 720p and audio-only formats.</p>
+                        <span class="read-link">Read Guide <i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+                    <a href="tutorials.html#tiktok" class="tutorial-card">
+                        <div class="tutorial-num">02</div>
+                        <h3>Save TikTok Without Watermark</h3>
+                        <p>Download TikTok videos without the annoying watermark in HD quality.</p>
+                        <span class="read-link">Read Guide <i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+                    <a href="tutorials.html#instagram" class="tutorial-card">
+                        <div class="tutorial-num">03</div>
+                        <h3>Download Instagram Reels &amp; Stories</h3>
+                        <p>Save Instagram Reels, Stories, and posts directly to your device.</p>
+                        <span class="read-link">Read Guide <i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+                    <a href="tutorials.html#audio" class="tutorial-card">
+                        <div class="tutorial-num">04</div>
+                        <h3>Extract MP3 Audio from Any Video</h3>
+                        <p>Convert and download audio from any video platform as high-quality MP3.</p>
+                        <span class="read-link">Read Guide <i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- ===== BLOG PREVIEW ===== -->
+            <section class="blog-section">
+                <div class="section-header">
+                    <div>
+                        <h2>Latest from Our Blog</h2>
+                        <p>Tips, guides, and updates from the GrabBlitz team</p>
+                    </div>
+                    <a href="blogs.html" class="view-all-btn">All Posts <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="blog-grid">
+                    <a href="blogs.html#post1" class="blog-card">
+                        <div class="blog-card-img-placeholder">📹</div>
+                        <div class="blog-card-body">
+                            <span class="blog-tag">Tutorial</span>
+                            <h3 class="blog-card-title">How to Download 4K YouTube Videos for Free in 2025</h3>
+                            <p class="blog-card-excerpt">A complete step-by-step guide to downloading ultra-HD 4K content from YouTube using GrabBlitz without any quality loss.</p>
+                            <div class="blog-card-footer">
+                                <span><i class="fa-solid fa-calendar"></i> July 10, 2025</span>
+                                <span><i class="fa-solid fa-clock"></i> 5 min read</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="blogs.html#post2" class="blog-card">
+                        <div class="blog-card-img-placeholder">🎵</div>
+                        <div class="blog-card-body">
+                            <span class="blog-tag">Tips</span>
+                            <h3 class="blog-card-title">Best MP3 Quality Settings for Music Downloads</h3>
+                            <p class="blog-card-excerpt">Discover the optimal audio bitrate and format settings to get the best music quality when downloading from streaming platforms.</p>
+                            <div class="blog-card-footer">
+                                <span><i class="fa-solid fa-calendar"></i> July 5, 2025</span>
+                                <span><i class="fa-solid fa-clock"></i> 4 min read</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="blogs.html#post3" class="blog-card">
+                        <div class="blog-card-img-placeholder">📱</div>
+                        <div class="blog-card-body">
+                            <span class="blog-tag">Guide</span>
+                            <h3 class="blog-card-title">TikTok Downloader: Save Videos Without Watermark</h3>
+                            <p class="blog-card-excerpt">The ultimate guide to saving TikTok content watermark-free on both Android and iOS devices using GrabBlitz.</p>
+                            <div class="blog-card-footer">
+                                <span><i class="fa-solid fa-calendar"></i> June 28, 2025</span>
+                                <span><i class="fa-solid fa-clock"></i> 3 min read</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- ===== HISTORY ===== -->
+            <section id="historySection" class="history-section hidden">
+                <h2>Recent Downloads</h2>
+                <div id="historyGrid" class="history-grid">
+                    <!-- History items injected here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">
+                    <img src="assets/images/logo.png" alt="GrabBlitz">
+                    <span>GrabBlitz</span>
+                </a>
+                <p>The fastest, free, and secure universal media downloader. Download from 30+ platforms in the highest quality. No sign-up, no ads, no limits.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="social-btn" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+                    <li><a href="tutorials.html"><i class="fa-solid fa-chevron-right"></i> Tutorials</a></li>
+                    <li><a href="blogs.html"><i class="fa-solid fa-chevron-right"></i> Blog</a></li>
+                    <li><a href="about.html#faq"><i class="fa-solid fa-chevron-right"></i> FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
+                    <li><a href="privacy.html"><i class="fa-solid fa-chevron-right"></i> Privacy Policy</a></li>
+                    <li><a href="terms.html"><i class="fa-solid fa-chevron-right"></i> Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Platforms</h4>
+                <ul>
+                    <li><a href="tutorials.html#yt"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
+                    <li><a href="tutorials.html#tiktok"><i class="fa-brands fa-tiktok"></i> TikTok</a></li>
+                    <li><a href="tutorials.html#instagram"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                    <li><a href="tutorials.html#twitter"><i class="fa-brands fa-x-twitter"></i> Twitter/X</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 GrabBlitz. All Rights Reserved.</p>
+            <div class="dev-credit">
+                <span>Developed with</span>
+                <i class="fa-solid fa-heart"></i>
+                <span>by <span>Shahzaib</span></span>
+            </div>
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toastContainer"></div>
+
+    <!-- Scripts (ES Modules) -->
+    <script type="module" src="assets/js/app.js"></script>
+    <script>
+        // Hamburger menu
+        document.getElementById('hamburgerBtn').addEventListener('click', () => {
+            document.getElementById('mobileNav').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f172a">
+    <title>Blog - GrabBlitz | Tips, Guides & Updates</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <meta name="description" content="Read the latest tips, tutorials, and guides on downloading media from YouTube, TikTok, Instagram and more on the GrabBlitz blog.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+</head>
+<body>
+    <div class="bg-aurora">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="container">
+        <header class="navbar">
+            <div class="navbar-left">
+                <a href="index.html" class="logo">
+                    <img src="assets/images/logo.png" alt="GrabBlitz Logo" style="width:36px;height:36px;border-radius:8px;object-fit:cover;">
+                    <span>GrabBlitz</span>
+                </a>
+                <nav class="nav-links" aria-label="Main Navigation">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="tutorials.html" class="nav-link">Tutorials</a>
+                    <a href="blogs.html" class="nav-link active">Blog</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+            </div>
+            <div class="navbar-right">
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </header>
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="tutorials.html" class="nav-link">Tutorials</a>
+            <a href="blogs.html" class="nav-link active">Blog</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <main>
+            <div class="page-hero">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Blog</span>
+                </div>
+                <h1>GrabBlitz <span style="color:var(--accent-primary)">Blog</span></h1>
+                <p>Tips, tutorials, guides, and the latest updates about media downloading</p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div style="display:flex;justify-content:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:2.5rem;">
+                <button class="blog-filter-btn active" onclick="filterBlogs('all', this)">All Posts</button>
+                <button class="blog-filter-btn" onclick="filterBlogs('tutorial', this)">Tutorials</button>
+                <button class="blog-filter-btn" onclick="filterBlogs('tips', this)">Tips</button>
+                <button class="blog-filter-btn" onclick="filterBlogs('guide', this)">Guides</button>
+                <button class="blog-filter-btn" onclick="filterBlogs('news', this)">News</button>
+            </div>
+
+            <!-- Featured Post -->
+            <div id="post1" style="background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:3rem;display:grid;grid-template-columns:1fr 1fr;min-height:320px;">
+                <div style="background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));display:flex;align-items:center;justify-content:center;font-size:6rem;padding:3rem;">📹</div>
+                <div style="padding:2.5rem;display:flex;flex-direction:column;justify-content:center;">
+                    <span class="blog-tag" style="margin-bottom:1rem;">⭐ Featured &bull; Tutorial</span>
+                    <h2 style="font-size:1.6rem;line-height:1.3;margin-bottom:0.75rem;">How to Download 4K YouTube Videos for Free in 2025</h2>
+                    <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:1.5rem;">A complete step-by-step guide to downloading ultra-HD 4K content from YouTube using GrabBlitz without any quality loss. Learn about supported formats, codecs, and the best quality settings.</p>
+                    <div style="display:flex;align-items:center;gap:1.5rem;font-size:0.85rem;color:var(--text-muted);margin-bottom:1.5rem;">
+                        <span><i class="fa-solid fa-calendar" style="margin-right:0.3rem;"></i>July 10, 2025</span>
+                        <span><i class="fa-solid fa-clock" style="margin-right:0.3rem;"></i>5 min read</span>
+                        <span><i class="fa-solid fa-eye" style="margin-right:0.3rem;"></i>12.4K views</span>
+                    </div>
+                    <a href="#" style="display:inline-flex;align-items:center;gap:0.5rem;background:var(--accent-gradient);color:white;padding:0.7rem 1.5rem;border-radius:var(--radius-full);font-weight:600;font-size:0.9rem;width:fit-content;">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="blog-grid" id="blogGrid">
+                <!-- Post 2 -->
+                <a id="post2" href="#" class="blog-card" data-tag="tips">
+                    <div class="blog-card-img-placeholder">🎵</div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Tips</span>
+                        <h3 class="blog-card-title">Best MP3 Quality Settings for Music Downloads</h3>
+                        <p class="blog-card-excerpt">Discover the optimal audio bitrate and format settings to get the best music quality when downloading from streaming platforms.</p>
+                        <div class="blog-card-footer">
+                            <span><i class="fa-solid fa-calendar"></i> July 5, 2025</span>
+                            <span><i class="fa-solid fa-clock"></i> 4 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Post 3 -->
+                <a id="post3" href="#" class="blog-card" data-tag="guide">
+                    <div class="blog-card-img-placeholder">📱</div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Guide</span>
+                        <h3 class="blog-card-title">TikTok Downloader: Save Videos Without Watermark</h3>
+                        <p class="blog-card-excerpt">The ultimate guide to saving TikTok content watermark-free on both Android and iOS devices using GrabBlitz.</p>
+                        <div class="blog-card-footer">
+                            <span><i class="fa-solid fa-calendar"></i> June 28, 2025</span>
+                            <span><i class="fa-solid fa-clock"></i> 3 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Post 4 -->
+                <a href="#" class="blog-card" data-tag="tutorial">
+                    <div class="blog-card-img-placeholder">📸</div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Tutorial</span>
+                        <h3 class="blog-card-title">How to Download Instagram Reels in 2025</h3>
+                        <p class="blog-card-excerpt">Step-by-step tutorial on saving Instagram Reels, Stories, and carousel posts to your gallery in full HD.</p>
+                        <div class="blog-card-footer">
+                            <span><i class="fa-solid fa-calendar"></i> June 20, 2025</span>
+                            <span><i class="fa-solid fa-clock"></i> 4 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Post 5 -->
+                <a href="#" class="blog-card" data-tag="news">
+                    <div class="blog-card-img-placeholder">🚀</div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">News</span>
+                        <h3 class="blog-card-title">GrabBlitz v2.0: Faster Downloads &amp; New Platforms</h3>
+                        <p class="blog-card-excerpt">We've rebuilt the download engine from the ground up. Introducing 3x faster speeds, new platform support, and a redesigned UI.</p>
+                        <div class="blog-card-footer">
+                            <span><i class="fa-solid fa-calendar"></i> June 15, 2025</span>
+                            <span><i class="fa-solid fa-clock"></i> 2 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Post 6 -->
+                <a href="#" class="blog-card" data-tag="guide">
+                    <div class="blog-card-img-placeholder">🎬</div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Guide</span>
+                        <h3 class="blog-card-title">Complete Guide to Downloading Facebook Videos</h3>
+                        <p class="blog-card-excerpt">Learn how to download public and private Facebook videos, stories, and live streams with our comprehensive guide.</p>
+                        <div class="blog-card-footer">
+                            <span><i class="fa-solid fa-calendar"></i> June 10, 2025</span>
+                            <span><i class="fa-solid fa-clock"></i> 5 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Post 7 -->
+                <a href="#" class="blog-card" data-tag="tips">
+                    <div class="blog-card-img-placeholder">🛡️</div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Tips</span>
+                        <h3 class="blog-card-title">Is It Legal to Download YouTube Videos?</h3>
+                        <p class="blog-card-excerpt">A clear breakdown of copyright laws, fair use policies, and what's legal when downloading YouTube content for personal use.</p>
+                        <div class="blog-card-footer">
+                            <span><i class="fa-solid fa-calendar"></i> June 2, 2025</span>
+                            <span><i class="fa-solid fa-clock"></i> 6 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Post 8 -->
+                <a href="#" class="blog-card" data-tag="tutorial">
+                    <div class="blog-card-img-placeholder">🎧</div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Tutorial</span>
+                        <h3 class="blog-card-title">Download SoundCloud Tracks as MP3</h3>
+                        <p class="blog-card-excerpt">A simple guide to downloading your favourite SoundCloud tracks as high-quality MP3 files using GrabBlitz.</p>
+                        <div class="blog-card-footer">
+                            <span><i class="fa-solid fa-calendar"></i> May 28, 2025</span>
+                            <span><i class="fa-solid fa-clock"></i> 3 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Post 9 -->
+                <a href="#" class="blog-card" data-tag="guide">
+                    <div class="blog-card-img-placeholder">🌐</div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Guide</span>
+                        <h3 class="blog-card-title">Top 10 Sites to Download Free Stock Videos</h3>
+                        <p class="blog-card-excerpt">Explore the best platforms for royalty-free stock video footage and how to save them using GrabBlitz for your projects.</p>
+                        <div class="blog-card-footer">
+                            <span><i class="fa-solid fa-calendar"></i> May 20, 2025</span>
+                            <span><i class="fa-solid fa-clock"></i> 7 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Post 10 -->
+                <a href="#" class="blog-card" data-tag="news">
+                    <div class="blog-card-img-placeholder">📊</div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">News</span>
+                        <h3 class="blog-card-title">GrabBlitz Reaches 2 Million Downloads Milestone</h3>
+                        <p class="blog-card-excerpt">We're proud to announce that GrabBlitz has helped users make over 2 million successful downloads. Thank you for your trust!</p>
+                        <div class="blog-card-footer">
+                            <span><i class="fa-solid fa-calendar"></i> May 12, 2025</span>
+                            <span><i class="fa-solid fa-clock"></i> 2 min read</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="#" class="page-btn active">1</a>
+                <a href="#" class="page-btn">2</a>
+                <a href="#" class="page-btn">3</a>
+                <a href="#" class="page-btn"><i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">
+                    <img src="assets/images/logo.png" alt="GrabBlitz">
+                    <span>GrabBlitz</span>
+                </a>
+                <p>The fastest, free, and secure universal media downloader. Download from 30+ platforms in the highest quality.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-btn"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-discord"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+                    <li><a href="tutorials.html"><i class="fa-solid fa-chevron-right"></i> Tutorials</a></li>
+                    <li><a href="blogs.html"><i class="fa-solid fa-chevron-right"></i> Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
+                    <li><a href="privacy.html"><i class="fa-solid fa-chevron-right"></i> Privacy Policy</a></li>
+                    <li><a href="terms.html"><i class="fa-solid fa-chevron-right"></i> Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Platforms</h4>
+                <ul>
+                    <li><a href="tutorials.html#yt"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
+                    <li><a href="tutorials.html#tiktok"><i class="fa-brands fa-tiktok"></i> TikTok</a></li>
+                    <li><a href="tutorials.html#instagram"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                    <li><a href="tutorials.html#twitter"><i class="fa-brands fa-x-twitter"></i> Twitter/X</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 GrabBlitz. All Rights Reserved.</p>
+            <div class="dev-credit">
+                <span>Developed with</span>
+                <i class="fa-solid fa-heart"></i>
+                <span>by <span>Shahzaib</span></span>
+            </div>
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const savedTheme = localStorage.getItem('gb-theme') || 'dark';
+        html.setAttribute('data-theme', savedTheme);
+        themeToggle.querySelector('i').className = savedTheme === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+        themeToggle.addEventListener('click', () => {
+            const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('gb-theme', newTheme);
+            themeToggle.querySelector('i').className = newTheme === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+        });
+
+        // Hamburger
+        document.getElementById('hamburgerBtn').addEventListener('click', () => {
+            document.getElementById('mobileNav').classList.toggle('open');
+        });
+
+        // Blog filter
+        function filterBlogs(tag, btn) {
+            document.querySelectorAll('.blog-filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('#blogGrid .blog-card').forEach(card => {
+                if (tag === 'all' || card.dataset.tag === tag) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+    <style>
+        .blog-filter-btn {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.5rem 1.25rem;
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 150ms ease;
+        }
+        .blog-filter-btn.active,
+        .blog-filter-btn:hover {
+            background: var(--accent-gradient);
+            border-color: transparent;
+            color: white;
+        }
+        @media (max-width: 640px) {
+            #post1 { grid-template-columns: 1fr !important; }
+            #post1 > div:first-child { min-height: 200px; }
+        }
+    </style>
+</body>
+</html>

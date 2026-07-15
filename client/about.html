@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f172a">
+    <title>About Us - GrabBlitz | Our Story & Team</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <meta name="description" content="Learn about GrabBlitz — the team behind the fastest universal media downloader. Our mission, values, and the story of how we built it.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+</head>
+<body>
+    <div class="bg-aurora">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="container">
+        <header class="navbar">
+            <div class="navbar-left">
+                <a href="index.html" class="logo">
+                    <img src="assets/images/logo.png" alt="GrabBlitz Logo" style="width:36px;height:36px;border-radius:8px;object-fit:cover;">
+                    <span>GrabBlitz</span>
+                </a>
+                <nav class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="tutorials.html" class="nav-link">Tutorials</a>
+                    <a href="blogs.html" class="nav-link">Blog</a>
+                    <a href="about.html" class="nav-link active">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+            </div>
+            <div class="navbar-right">
+                <button id="themeToggle" class="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+                <button class="hamburger" id="hamburgerBtn"><span></span><span></span><span></span></button>
+            </div>
+        </header>
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="tutorials.html" class="nav-link">Tutorials</a>
+            <a href="blogs.html" class="nav-link">Blog</a>
+            <a href="about.html" class="nav-link active">About</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <main>
+            <div class="page-hero">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>About Us</span>
+                </div>
+                <h1>About <span style="color:var(--accent-primary)">GrabBlitz</span></h1>
+                <p>Built by a developer who was tired of slow, ad-filled, unreliable download tools.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Our Story -->
+    <section style="padding:0 0 4rem;">
+        <div class="prose-content" style="max-width:860px;margin:0 auto;padding:0 1.5rem 4rem;">
+            <h2>Our Story</h2>
+            <p>GrabBlitz was born out of frustration. In 2024, our founder <strong>Shahzaib</strong> needed a simple way to download tutorial videos for offline viewing during trips with no internet. Every tool he tried was either filled with ads, required software installation, had rate limits, or simply didn't work.</p>
+            <p>So he built GrabBlitz — a clean, fast, and completely free media downloader that respects users' time and privacy. What started as a weekend project quickly grew into a tool used by millions of people worldwide.</p>
+            <blockquote>"I wanted a tool that just works. No ads, no sign-ups, no slowness. That's exactly what GrabBlitz is." — Shahzaib, Founder</blockquote>
+            <p>Today GrabBlitz supports 30+ platforms, handles millions of downloads every month, and continues to grow with new features and platform support added regularly.</p>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section style="padding:0 1.5rem 4rem;">
+        <div style="max-width:var(--max-width);margin:0 auto;">
+            <div class="stats-strip">
+                <div class="stat-item">
+                    <span class="stat-value">2M+</span>
+                    <span class="stat-label">Total Downloads</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">30+</span>
+                    <span class="stat-label">Platforms</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">150+</span>
+                    <span class="stat-label">Countries</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">100%</span>
+                    <span class="stat-label">Free Forever</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values -->
+    <section style="padding:0 0 4rem;">
+        <div class="section-title-center" style="padding:0 1.5rem;">
+            <h2>Our Core Values</h2>
+            <p>The principles that guide everything we build</p>
+        </div>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h3>Speed First</h3>
+                <p>Every millisecond counts. We obsess over performance so your downloads happen instantly without waiting.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Privacy Focused</h3>
+                <p>We never store your URLs, track your downloads, or sell your data. What you download is your business.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon"><i class="fa-solid fa-heart"></i></div>
+                <h3>Always Free</h3>
+                <p>GrabBlitz is and will always be 100% free. No hidden fees, no premium tiers, no paywalls.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon"><i class="fa-solid fa-code"></i></div>
+                <h3>Open &amp; Honest</h3>
+                <p>We're transparent about how GrabBlitz works. No black boxes, no sketchy practices.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                <h3>Works Everywhere</h3>
+                <p>Whether you're on desktop, tablet, or phone — GrabBlitz adapts to your device perfectly.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+                <h3>Constantly Improving</h3>
+                <p>We push updates regularly to add new platforms, fix issues, and improve the user experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section style="padding:0 0 4rem;">
+        <div class="section-title-center" style="padding:0 1.5rem;">
+            <h2>Meet the Team</h2>
+            <p>The people behind GrabBlitz</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-avatar">S</div>
+                <h3>Shahzaib</h3>
+                <p>Founder &amp; Lead Developer</p>
+                <div style="display:flex;justify-content:center;gap:0.5rem;margin-top:1rem;">
+                    <a href="#" class="social-btn" style="width:32px;height:32px;"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="social-btn" style="width:32px;height:32px;"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar" style="background:linear-gradient(135deg,#10b981,#3b82f6);">A</div>
+                <h3>Ali Hassan</h3>
+                <p>Backend Engineer</p>
+                <div style="display:flex;justify-content:center;gap:0.5rem;margin-top:1rem;">
+                    <a href="#" class="social-btn" style="width:32px;height:32px;"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar" style="background:linear-gradient(135deg,#f59e0b,#ef4444);">F</div>
+                <h3>Fatima Zahra</h3>
+                <p>UI/UX Designer</p>
+                <div style="display:flex;justify-content:center;gap:0.5rem;margin-top:1rem;">
+                    <a href="#" class="social-btn" style="width:32px;height:32px;"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar" style="background:linear-gradient(135deg,#8b5cf6,#ec4899);">U</div>
+                <h3>Usman Khan</h3>
+                <p>DevOps &amp; Infrastructure</p>
+                <div style="display:flex;justify-content:center;gap:0.5rem;margin-top:1rem;">
+                    <a href="#" class="social-btn" style="width:32px;height:32px;"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" style="padding:0 1.5rem 5rem;">
+        <div style="max-width:780px;margin:0 auto;">
+            <div class="section-title-center">
+                <h2>Frequently Asked Questions</h2>
+                <p>Got questions? We have answers.</p>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:1rem;">
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        Is GrabBlitz completely free? <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-a">
+                        <p>Yes! GrabBlitz is 100% free with no hidden costs, no sign-up required, and no premium tiers. It will always be free.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        Does GrabBlitz store my downloads? <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-a">
+                        <p>No. We never store your URLs or downloaded files. Everything is processed in real-time and files are delivered directly to your device.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        Which platforms does GrabBlitz support? <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-a">
+                        <p>GrabBlitz supports 30+ platforms including YouTube, TikTok, Instagram, Twitter/X, Facebook, Vimeo, SoundCloud, Dailymotion, Twitch, Reddit, Pinterest, and many more.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        Is it legal to download videos? <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-a">
+                        <p>Downloading videos for personal, offline use is generally acceptable. However, distributing copyrighted content or using it commercially without permission is illegal. Always respect the content creator's rights.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        Do I need to install any software? <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-a">
+                        <p>No installation needed! GrabBlitz works entirely in your web browser. Just paste a URL and download.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <div style="padding:0 1.5rem;">
+        <div class="cta-banner" style="max-width:var(--max-width);margin:0 auto 4rem;">
+            <h2>Start Downloading for Free</h2>
+            <p>No sign-up, no software, no limits. Just paste a link and download.</p>
+            <a href="index.html" class="btn-white"><i class="fa-solid fa-bolt"></i> Try GrabBlitz Now</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">
+                    <img src="assets/images/logo.png" alt="GrabBlitz">
+                    <span>GrabBlitz</span>
+                </a>
+                <p>The fastest, free, and secure universal media downloader. Download from 30+ platforms in the highest quality.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-btn"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-discord"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+                    <li><a href="tutorials.html"><i class="fa-solid fa-chevron-right"></i> Tutorials</a></li>
+                    <li><a href="blogs.html"><i class="fa-solid fa-chevron-right"></i> Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
+                    <li><a href="privacy.html"><i class="fa-solid fa-chevron-right"></i> Privacy Policy</a></li>
+                    <li><a href="terms.html"><i class="fa-solid fa-chevron-right"></i> Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Platforms</h4>
+                <ul>
+                    <li><a href="tutorials.html#yt"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
+                    <li><a href="tutorials.html#tiktok"><i class="fa-brands fa-tiktok"></i> TikTok</a></li>
+                    <li><a href="tutorials.html#instagram"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                    <li><a href="tutorials.html#twitter"><i class="fa-brands fa-x-twitter"></i> Twitter/X</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 GrabBlitz. All Rights Reserved.</p>
+            <div class="dev-credit">
+                <span>Developed with</span>
+                <i class="fa-solid fa-heart"></i>
+                <span>by <span>Shahzaib</span></span>
+            </div>
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .faq-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+        .faq-q {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: left;
+            font-family: var(--font-sans);
+            gap: 1rem;
+        }
+        .faq-q i { transition: transform 0.3s ease; flex-shrink:0; color: var(--text-muted); }
+        .faq-q.open i { transform: rotate(180deg); }
+        .faq-a {
+            display: none;
+            padding: 0 1.5rem 1.25rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+        .faq-a.open { display: block; }
+    </style>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const savedTheme = localStorage.getItem('gb-theme') || 'dark';
+        html.setAttribute('data-theme', savedTheme);
+        themeToggle.querySelector('i').className = savedTheme === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+        themeToggle.addEventListener('click', () => {
+            const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('gb-theme', newTheme);
+            themeToggle.querySelector('i').className = newTheme === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+        });
+        document.getElementById('hamburgerBtn').addEventListener('click', () => {
+            document.getElementById('mobileNav').classList.toggle('open');
+        });
+        function toggleFaq(btn) {
+            btn.classList.toggle('open');
+            btn.nextElementSibling.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>

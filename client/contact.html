@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f172a">
+    <title>Contact Us - GrabBlitz | Get in Touch</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <meta name="description" content="Get in touch with the GrabBlitz team. We're here to help with any questions, feedback, or support you need.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+</head>
+<body>
+    <div class="bg-aurora">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="container">
+        <header class="navbar">
+            <div class="navbar-left">
+                <a href="index.html" class="logo">
+                    <img src="assets/images/logo.png" alt="GrabBlitz Logo" style="width:36px;height:36px;border-radius:8px;object-fit:cover;">
+                    <span>GrabBlitz</span>
+                </a>
+                <nav class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="tutorials.html" class="nav-link">Tutorials</a>
+                    <a href="blogs.html" class="nav-link">Blog</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                </nav>
+            </div>
+            <div class="navbar-right">
+                <button id="themeToggle" class="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+                <button class="hamburger" id="hamburgerBtn"><span></span><span></span><span></span></button>
+            </div>
+        </header>
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="tutorials.html" class="nav-link">Tutorials</a>
+            <a href="blogs.html" class="nav-link">Blog</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact.html" class="nav-link active">Contact</a>
+        </nav>
+
+        <main>
+            <div class="page-hero">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Contact</span>
+                </div>
+                <h1>Contact <span style="color:var(--accent-primary)">Us</span></h1>
+                <p>We'd love to hear from you. Reach out with questions, feedback, or just to say hello!</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+
+                    <div class="contact-detail">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="contact-detail-text">
+                            <h4>Email Us</h4>
+                            <p>support@GrabBlitz.com</p>
+                            <p style="font-size:0.8rem;color:var(--text-muted);margin-top:0.2rem;">We reply within 24 hours</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="contact-icon"><i class="fa-brands fa-discord"></i></div>
+                        <div class="contact-detail-text">
+                            <h4>Discord Community</h4>
+                            <p>discord.gg/GrabBlitz</p>
+                            <p style="font-size:0.8rem;color:var(--text-muted);margin-top:0.2rem;">Join 5,000+ members</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
+                        <div class="contact-detail-text">
+                            <h4>GitHub Issues</h4>
+                            <p>github.com/GrabBlitz</p>
+                            <p style="font-size:0.8rem;color:var(--text-muted);margin-top:0.2rem;">For bug reports</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
+                        <div class="contact-detail-text">
+                            <h4>Support Hours</h4>
+                            <p>Monday – Friday</p>
+                            <p style="font-size:0.8rem;color:var(--text-muted);margin-top:0.2rem;">9 AM – 6 PM (PKT)</p>
+                        </div>
+                    </div>
+
+                    <!-- Response time indicator -->
+                    <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);border-radius:var(--radius-md);padding:1rem 1.25rem;margin-top:0.5rem;">
+                        <div style="display:flex;align-items:center;gap:0.5rem;color:#10b981;font-weight:600;font-size:0.9rem;">
+                            <span style="width:8px;height:8px;background:#10b981;border-radius:50%;animation:pulse 2s infinite;"></span>
+                            All systems operational
+                        </div>
+                        <p style="color:var(--text-muted);font-size:0.82rem;margin-top:0.35rem;">Average response time: &lt; 2 hours</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3 style="margin-bottom:1.5rem;font-size:1.2rem;">Send a Message</h3>
+                    <form id="contactForm" onsubmit="handleSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" placeholder="Shahzaib" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" placeholder="Khan" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="you@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" required>
+                                <option value="" disabled selected>Select a topic...</option>
+                                <option value="support">Technical Support</option>
+                                <option value="bug">Bug Report</option>
+                                <option value="feature">Feature Request</option>
+                                <option value="dmca">DMCA / Copyright</option>
+                                <option value="business">Business Inquiry</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="Tell us how we can help you..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:1rem;" id="submitBtn">
+                            <span>Send Message</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div id="successMsg" style="display:none;text-align:center;padding:2rem;">
+                        <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
+                        <h3 style="margin-bottom:0.5rem;">Message Sent!</h3>
+                        <p style="color:var(--text-secondary);">Thanks for reaching out. We'll get back to you within 24 hours.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">
+                    <img src="assets/images/logo.png" alt="GrabBlitz">
+                    <span>GrabBlitz</span>
+                </a>
+                <p>The fastest, free, and secure universal media downloader. Download from 30+ platforms in the highest quality.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-btn"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-discord"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+                    <li><a href="tutorials.html"><i class="fa-solid fa-chevron-right"></i> Tutorials</a></li>
+                    <li><a href="blogs.html"><i class="fa-solid fa-chevron-right"></i> Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
+                    <li><a href="privacy.html"><i class="fa-solid fa-chevron-right"></i> Privacy Policy</a></li>
+                    <li><a href="terms.html"><i class="fa-solid fa-chevron-right"></i> Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Platforms</h4>
+                <ul>
+                    <li><a href="tutorials.html#yt"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
+                    <li><a href="tutorials.html#tiktok"><i class="fa-brands fa-tiktok"></i> TikTok</a></li>
+                    <li><a href="tutorials.html#instagram"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                    <li><a href="tutorials.html#twitter"><i class="fa-brands fa-x-twitter"></i> Twitter/X</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 GrabBlitz. All Rights Reserved.</p>
+            <div class="dev-credit">
+                <span>Developed with</span>
+                <i class="fa-solid fa-heart"></i>
+                <span>by <span>Shahzaib</span></span>
+            </div>
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+    </style>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const savedTheme = localStorage.getItem('gb-theme') || 'dark';
+        html.setAttribute('data-theme', savedTheme);
+        themeToggle.querySelector('i').className = savedTheme === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+        themeToggle.addEventListener('click', () => {
+            const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('gb-theme', newTheme);
+            themeToggle.querySelector('i').className = newTheme === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+        });
+        document.getElementById('hamburgerBtn').addEventListener('click', () => {
+            document.getElementById('mobileNav').classList.toggle('open');
+        });
+        function handleSubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+            setTimeout(() => {
+                document.getElementById('contactForm').style.display = 'none';
+                document.getElementById('successMsg').style.display = 'block';
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
