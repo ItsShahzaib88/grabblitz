@@ -94,11 +94,16 @@ async def root():
 
 if __name__ == "__main__":
     import uvicorn
+    
+    # Render provides a PORT environment variable, usually 10000. 
+    # If not found, default to 8000 for local development.
+    port = int(os.environ.get("PORT", 8000))
+    
     uvicorn.run(
         "main:app",
         host="0.0.0.0",
-        port=8000,
-        reload=True,
+        port=port,
+        reload=False,  # Should be False in production
         log_level="info",
         loop="asyncio",   # Uses ProactorEventLoop on Windows (set above)
     )
