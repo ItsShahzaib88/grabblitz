@@ -106,7 +106,7 @@ def extract_info(url: str) -> dict:
         "no_warnings": True,
         "skip_download": True,
         "extract_flat": "in_playlist",
-        "ignoreerrors": True,
+        "ignoreerrors": False,
         "extractor_args": {"youtube": {"player_client": ["android", "web"]}},
     }
 
