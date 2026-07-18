@@ -107,7 +107,7 @@ def extract_info(url: str) -> dict:
         "skip_download": True,
         "extract_flat": "in_playlist",
         "ignoreerrors": False,
-        "extractor_args": {"youtube": {"player_client": ["android", "web"]}},
+        "extractor_args": {"youtube": {"player_client": ["ios", "android", "web"]}},
     }
     cookie_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "cookies.txt")
     if os.path.exists(cookie_path):
@@ -289,7 +289,7 @@ def download_to_file(source_url: str, format_id: str, title: str = "download", e
         "merge_output_format": "mp4" if not is_audio else None,
         # Embed metadata
         "writethumbnail": False,
-        "extractor_args": {"youtube": {"player_client": ["android", "web"]}},
+        "extractor_args": {"youtube": {"player_client": ["ios", "android", "web"]}},
     }
     
     cookie_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "cookies.txt")
