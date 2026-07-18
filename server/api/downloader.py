@@ -107,7 +107,6 @@ def extract_info(url: str) -> dict:
         "skip_download": True,
         "extract_flat": "in_playlist",
         "ignoreerrors": False,
-        "extractor_args": {"youtube": {"player_client": ["ios", "android"]}},
     }
 
     try:
@@ -276,7 +275,6 @@ def download_to_file(source_url: str, format_id: str, title: str = "download", e
         "quiet": True,
         "no_warnings": True,
         "outtmpl": output_template,
-        "extractor_args": {"youtube": {"player_client": ["ios", "android"]}},
         "format": actual_format,
         "ffmpeg_location": imageio_ffmpeg.get_ffmpeg_exe(),
         # No timeout — let it download as long as it needs
