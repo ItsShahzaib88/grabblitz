@@ -108,6 +108,9 @@ def extract_info(url: str) -> dict:
         "extract_flat": "in_playlist",
         "ignoreerrors": False,
     }
+    cookie_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "cookies.txt")
+    if os.path.exists(cookie_path):
+        ydl_opts["cookiefile"] = cookie_path
 
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
@@ -286,6 +289,10 @@ def download_to_file(source_url: str, format_id: str, title: str = "download", e
         # Embed metadata
         "writethumbnail": False,
     }
+    
+    cookie_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "cookies.txt")
+    if os.path.exists(cookie_path):
+        ydl_opts["cookiefile"] = cookie_path
     
     if progress_hook:
         ydl_opts["progress_hooks"] = [progress_hook]
