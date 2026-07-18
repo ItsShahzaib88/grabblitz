@@ -109,7 +109,7 @@ def extract_info(url: str) -> dict:
         "ignoreerrors": False,
         "extractor_args": {"youtube": {"player_client": ["ios", "android", "web"]}},
     }
-    cookie_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "cookies.txt")
+    cookie_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "cookies.txt")
     if os.path.exists(cookie_path):
         ydl_opts["cookiefile"] = cookie_path
 
@@ -292,7 +292,7 @@ def download_to_file(source_url: str, format_id: str, title: str = "download", e
         "extractor_args": {"youtube": {"player_client": ["ios", "android", "web"]}},
     }
     
-    cookie_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "cookies.txt")
+    cookie_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "cookies.txt")
     if os.path.exists(cookie_path):
         ydl_opts["cookiefile"] = cookie_path
     
